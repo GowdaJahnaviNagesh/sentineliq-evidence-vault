@@ -1,5 +1,6 @@
 package com.internship.tool.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import jakarta.validation.constraints.NotBlank;
@@ -23,6 +24,7 @@ public class Evidence {
     private String status;
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
 
     // 🔹 New fields
